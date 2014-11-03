@@ -1,6 +1,6 @@
 package com.pyr.news.hib.model.acnt;
 
-// Generated Oct 16, 2014 3:52:18 PM by Hibernate Tools 3.4.0.CR1
+// Generated Nov 3, 2014 6:22:09 PM by Hibernate Tools 3.4.0.CR1
 
 import java.util.HashSet;
 import java.util.Set;
@@ -10,9 +10,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -29,7 +27,8 @@ public class Address implements java.io.Serializable {
 	private String state;
 	private String country;
 	private String zip;
-	private Set users = new HashSet(0);
+	private Set userAddresseses = new HashSet(0);
+	private Set entityAddresseses = new HashSet(0);
 
 	public Address() {
 	}
@@ -44,14 +43,16 @@ public class Address implements java.io.Serializable {
 	}
 
 	public Address(String address1, String address2, String city, String state,
-			String country, String zip, Set users) {
+			String country, String zip, Set userAddresseses,
+			Set entityAddresseses) {
 		this.address1 = address1;
 		this.address2 = address2;
 		this.city = city;
 		this.state = state;
 		this.country = country;
 		this.zip = zip;
-		this.users = users;
+		this.userAddresseses = userAddresseses;
+		this.entityAddresseses = entityAddresseses;
 	}
 
 	@Id
@@ -119,14 +120,22 @@ public class Address implements java.io.Serializable {
 		this.zip = zip;
 	}
 
-	@ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(name = "user_addresses", catalog = "demo_news", joinColumns = { @JoinColumn(name = "address_id", nullable = false, updatable = false) }, inverseJoinColumns = { @JoinColumn(name = "user_id", nullable = false, updatable = false) })
-	public Set getUsers() {
-		return this.users;
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "address")
+	public Set getUserAddresseses() {
+		return this.userAddresseses;
 	}
 
-	public void setUsers(Set users) {
-		this.users = users;
+	public void setUserAddresseses(Set userAddresseses) {
+		this.userAddresseses = userAddresseses;
+	}
+
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "address")
+	public Set getEntityAddresseses() {
+		return this.entityAddresseses;
+	}
+
+	public void setEntityAddresseses(Set entityAddresseses) {
+		this.entityAddresseses = entityAddresseses;
 	}
 
 }

@@ -1,6 +1,6 @@
 package com.pyr.news.hib.model.acnt;
 
-// Generated Oct 16, 2014 3:52:18 PM by Hibernate Tools 3.4.0.CR1
+// Generated Nov 3, 2014 6:22:09 PM by Hibernate Tools 3.4.0.CR1
 
 import java.util.HashSet;
 import java.util.Set;
@@ -10,9 +10,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -28,8 +26,11 @@ public class User implements java.io.Serializable {
 	private String lastname;
 	private String email;
 	private String altEmail;
-	private Set roles = new HashSet(0);
-	private Set addresses = new HashSet(0);
+	private Set userRoleses = new HashSet(0);
+	private Set userAccounts = new HashSet(0);
+	private Set userAddresseses = new HashSet(0);
+	private Set employees = new HashSet(0);
+	private Set userContacts = new HashSet(0);
 
 	public User() {
 	}
@@ -42,14 +43,18 @@ public class User implements java.io.Serializable {
 	}
 
 	public User(String name, String firstname, String lastname, String email,
-			String altEmail, Set roles, Set addresses) {
+			String altEmail, Set userRoleses, Set userAccounts,
+			Set userAddresseses, Set employees, Set userContacts) {
 		this.name = name;
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.email = email;
 		this.altEmail = altEmail;
-		this.roles = roles;
-		this.addresses = addresses;
+		this.userRoleses = userRoleses;
+		this.userAccounts = userAccounts;
+		this.userAddresseses = userAddresseses;
+		this.employees = employees;
+		this.userContacts = userContacts;
 	}
 
 	@Id
@@ -108,24 +113,49 @@ public class User implements java.io.Serializable {
 		this.altEmail = altEmail;
 	}
 
-	@ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(name = "user_roles", catalog = "demo_news", joinColumns = { @JoinColumn(name = "user_id", nullable = false, updatable = false) }, inverseJoinColumns = { @JoinColumn(name = "role_id", nullable = false, updatable = false) })
-	public Set getRoles() {
-		return this.roles;
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+	public Set getUserRoleses() {
+		return this.userRoleses;
 	}
 
-	public void setRoles(Set roles) {
-		this.roles = roles;
+	public void setUserRoleses(Set userRoleses) {
+		this.userRoleses = userRoleses;
 	}
 
-	@ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(name = "user_addresses", catalog = "demo_news", joinColumns = { @JoinColumn(name = "user_id", nullable = false, updatable = false) }, inverseJoinColumns = { @JoinColumn(name = "address_id", nullable = false, updatable = false) })
-	public Set getAddresses() {
-		return this.addresses;
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+	public Set getUserAccounts() {
+		return this.userAccounts;
 	}
 
-	public void setAddresses(Set addresses) {
-		this.addresses = addresses;
+	public void setUserAccounts(Set userAccounts) {
+		this.userAccounts = userAccounts;
+	}
+
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+	public Set getUserAddresseses() {
+		return this.userAddresseses;
+	}
+
+	public void setUserAddresseses(Set userAddresseses) {
+		this.userAddresseses = userAddresseses;
+	}
+
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+	public Set getEmployees() {
+		return this.employees;
+	}
+
+	public void setEmployees(Set employees) {
+		this.employees = employees;
+	}
+
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+	public Set getUserContacts() {
+		return this.userContacts;
+	}
+
+	public void setUserContacts(Set userContacts) {
+		this.userContacts = userContacts;
 	}
 
 }

@@ -1,6 +1,6 @@
 package com.pyr.news.hib.model.acnt;
 
-// Generated Oct 16, 2014 3:52:18 PM by Hibernate Tools 3.4.0.CR1
+// Generated Nov 3, 2014 6:22:09 PM by Hibernate Tools 3.4.0.CR1
 
 import java.util.HashSet;
 import java.util.Set;
@@ -10,9 +10,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -24,18 +22,23 @@ public class Role implements java.io.Serializable {
 
 	private Integer id;
 	private String name;
-	private Set users = new HashSet(0);
+	private int roleTypeId;
+	private Set userRoleses = new HashSet(0);
+	private Set empRoleses = new HashSet(0);
 
 	public Role() {
 	}
 
-	public Role(String name) {
+	public Role(String name, int roleTypeId) {
 		this.name = name;
+		this.roleTypeId = roleTypeId;
 	}
 
-	public Role(String name, Set users) {
+	public Role(String name, int roleTypeId, Set userRoleses, Set empRoleses) {
 		this.name = name;
-		this.users = users;
+		this.roleTypeId = roleTypeId;
+		this.userRoleses = userRoleses;
+		this.empRoleses = empRoleses;
 	}
 
 	@Id
@@ -58,14 +61,31 @@ public class Role implements java.io.Serializable {
 		this.name = name;
 	}
 
-	@ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(name = "user_roles", catalog = "demo_news", joinColumns = { @JoinColumn(name = "role_id", nullable = false, updatable = false) }, inverseJoinColumns = { @JoinColumn(name = "user_id", nullable = false, updatable = false) })
-	public Set getUsers() {
-		return this.users;
+	@Column(name = "role_type_id", nullable = false)
+	public int getRoleTypeId() {
+		return this.roleTypeId;
 	}
 
-	public void setUsers(Set users) {
-		this.users = users;
+	public void setRoleTypeId(int roleTypeId) {
+		this.roleTypeId = roleTypeId;
+	}
+
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "role")
+	public Set getUserRoleses() {
+		return this.userRoleses;
+	}
+
+	public void setUserRoleses(Set userRoleses) {
+		this.userRoleses = userRoleses;
+	}
+
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "role")
+	public Set getEmpRoleses() {
+		return this.empRoleses;
+	}
+
+	public void setEmpRoleses(Set empRoleses) {
+		this.empRoleses = empRoleses;
 	}
 
 }
