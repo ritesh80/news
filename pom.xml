@@ -70,5 +70,6 @@
     <module>news-hib-model-advertise</module>
     <module>news-hib-model-scheduler</module>
     <module>news-service-accnt</module>
+    <module>news-hib-dao-article</module>
   </modules>
 </project>

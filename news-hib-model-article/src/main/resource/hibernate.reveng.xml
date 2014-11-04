@@ -2,20 +2,16 @@
 <!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
 
 <hibernate-reverse-engineering>
-	<table-filter match-catalog="demo_news" match-name="article" />
-	<table-filter match-catalog="demo_news"
-		match-name="article_attachement" />
-	<table-filter match-catalog="demo_news"
-		match-name="article_category" />
-	<table-filter match-catalog="demo_news"
-		match-name="article_keywords" />
-	<table-filter match-catalog="demo_news"
-		match-name="article_reflink" />
-	<table-filter match-catalog="demo_news"
-		match-name="article_section" />
-	<table-filter match-catalog="demo_news" match-name="article_story" />
-	<table-filter match-catalog="demo_news" match-name="attachment" />
-	<table-filter match-catalog="demo_news" match-name="category" />
-	<table-filter match-catalog="demo_news" match-name="keywords" />
-	<table-filter match-name=".*" exclude="true"></table-filter>
+  <table-filter match-catalog="demo_news" match-name="article"/>
+  <table-filter match-catalog="demo_news" match-name="article_attachement"/>
+  <table-filter match-catalog="demo_news" match-name="article_category"/>
+  <table-filter match-catalog="demo_news" match-name="article_deleteat"/>
+  <table-filter match-catalog="demo_news" match-name="article_keywords"/>
+  <table-filter match-catalog="demo_news" match-name="article_reflink"/>
+  <table-filter match-catalog="demo_news" match-name="article_section"/>
+  <table-filter match-catalog="demo_news" match-name="article_story"/>
+  <table-filter match-catalog="demo_news" match-name="attachment"/>
+  <table-filter match-catalog="demo_news" match-name="category"/>
+  <table-filter match-catalog="demo_news" match-name="keywords"/>
+  <table-filter match-catalog="demo_news" match-name="section"/>
 </hibernate-reverse-engineering>

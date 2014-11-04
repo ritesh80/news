@@ -1,6 +1,6 @@
 package com.pyr.news.hib.model.article;
 
-// Generated Nov 3, 2014 6:10:49 PM by Hibernate Tools 3.4.0.CR1
+// Generated Nov 4, 2014 6:30:37 PM by Hibernate Tools 3.4.0.CR1
 
 import java.util.Date;
 import java.util.HashSet;
@@ -120,7 +120,7 @@ public class Article implements java.io.Serializable {
 		this.summary = summary;
 	}
 
-	@Column(name = "status", nullable = false, length = 17)
+	@Column(name = "status", nullable = false, length = 15)
 	public String getStatus() {
 		return this.status;
 	}
