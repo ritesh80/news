@@ -9,7 +9,7 @@
   </parent>
   <groupId>com.pyr.news.hib.model.acnt</groupId>
   <artifactId>news-hib-model-acnt</artifactId>
-  <version>0.0.1.2-SNAPSHOT</version>
+  <version>0.0.1-SNAPSHOT</version>
   <name>news-hib-model-acnt</name>
   <url>http://maven.apache.org</url>
   <properties>
@@ -22,7 +22,7 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
-    <dependency>
+    <!-- dependency>
     	<groupId>org.hibernate</groupId>
     	<artifactId>hibernate-annotations</artifactId>
     	<version>${hibernate.version}</version>
@@ -36,7 +36,7 @@
     	<groupId>cglib</groupId>
     	<artifactId>cglib</artifactId>
     	<version>2.2</version>
-    </dependency>
+    </dependency-->
   </dependencies>
   <build>
   	<plugins>

@@ -13,8 +13,11 @@
 		<!-- <hibernate.version>4.3.5.Final</hibernate.version> -->
 		<hibernate.version>3.6.9.Final</hibernate.version>
 		<cxf.version>2.7.2</cxf.version>
+		<pyr.news.version>0.0.1-SNAPSHOT</pyr.news.version>
+		<spring-security>3.2.3.RELEASE</spring-security>
   </properties>
    <dependencies>
+
           <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -25,6 +28,37 @@
             <artifactId>commons-dbcp</artifactId>
             <version>1.4</version>
         </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+        <!-- Spring and Transactions -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring-framework.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>${spring-framework.version}</version>
+        </dependency>
+	    <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-aspects</artifactId>
+            <version>${spring-security}</version>
+        </dependency>
+        <dependency>
+        		<groupId>org.springframework.security</groupId>
+        		<artifactId>spring-security-config</artifactId>
+        		<version>${spring-security}</version>
+    </dependency>
     </dependencies>
   <modules>
   	<module>news-ws-app</module>
@@ -35,5 +69,6 @@
   	<module>news-solr-model-article</module>
     <module>news-hib-model-advertise</module>
     <module>news-hib-model-scheduler</module>
+    <module>news-service-accnt</module>
   </modules>
 </project>
