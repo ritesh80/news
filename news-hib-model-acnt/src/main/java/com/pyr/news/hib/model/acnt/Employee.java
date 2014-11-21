@@ -25,9 +25,9 @@ public class Employee implements java.io.Serializable {
 	private Integer id;
 	private User user;
 	private Employee employee;
-	private Set empDpts = new HashSet(0);
-	private Set empRoleses = new HashSet(0);
-	private Set employees = new HashSet(0);
+	private Set<EmpDpt> empDpts = new HashSet(0);
+	private Set<EmpRoles> empRoleses = new HashSet(0);
+	private Set<Employee> employees = new HashSet(0);
 
 	public Employee() {
 	}
@@ -37,8 +37,8 @@ public class Employee implements java.io.Serializable {
 		this.employee = employee;
 	}
 
-	public Employee(User user, Employee employee, Set empDpts, Set empRoleses,
-			Set employees) {
+	public Employee(User user, Employee employee, Set<EmpDpt> empDpts, Set<EmpRoles> empRoleses,
+			Set<Employee> employees) {
 		this.user = user;
 		this.employee = employee;
 		this.empDpts = empDpts;
@@ -78,29 +78,29 @@ public class Employee implements java.io.Serializable {
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "employee")
-	public Set getEmpDpts() {
+	public Set<EmpDpt> getEmpDpts() {
 		return this.empDpts;
 	}
 
-	public void setEmpDpts(Set empDpts) {
+	public void setEmpDpts(Set<EmpDpt> empDpts) {
 		this.empDpts = empDpts;
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "employee")
-	public Set getEmpRoleses() {
+	public Set<EmpRoles> getEmpRoleses() {
 		return this.empRoleses;
 	}
 
-	public void setEmpRoleses(Set empRoleses) {
+	public void setEmpRoleses(Set<EmpRoles> empRoleses) {
 		this.empRoleses = empRoleses;
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "employee")
-	public Set getEmployees() {
+	public Set<Employee> getEmployees() {
 		return this.employees;
 	}
 
-	public void setEmployees(Set employees) {
+	public void setEmployees(Set<Employee> employees) {
 		this.employees = employees;
 	}
 

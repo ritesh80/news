@@ -18,101 +18,101 @@ import com.pyr.news.hib.model.acnt.User;
 public class AccountServiceImpl implements AccountService {
 	
 	@Autowired
-	private AccountDao accountDao;
+	private AccountDao accountDaoImpl;
 	
 	@Autowired
-	private UserDao userDao;
+	private UserDao userDaoImpl;
 	
 	@Autowired
-	private EmployeeDao empDao;
+	private EmployeeDao empDaoImpl;
 	
 	@Autowired
-	private RoleDao roleDao;
+	private RoleDao roleDaoImpl;
 	
 	@Autowired
-	private DepartmentDao deptDao;
+	private DepartmentDao deptDaoImpl;
 	
 	public void addAccount(Account account){
-		accountDao.addAccount(account);
+		accountDaoImpl.addAccount(account);
 	}
 	
 	public void updateAccount(Account account){
-		accountDao.updateAccount(account);
+		accountDaoImpl.updateAccount(account);
 	}
 	
 	public void removeAccount(Account account){
-		accountDao.removeAccount(account);
+		accountDaoImpl.removeAccount(account);
 	}
 	
 	public Account getAccount(int accountID){
-		return accountDao.getAccount(accountID);
+		return accountDaoImpl.getAccount(accountID);
 	}
 	
 	public Account getAccountByLogin(String login){
-		return accountDao.getAccountByLogin(login);
+		return accountDaoImpl.getAccountByLogin(login);
 	}
 	
 	public void addUser(User user){
-		userDao.addUser(user);
+		userDaoImpl.addUser(user);
 	}
 	
 	public void updateUser(User user){
-		userDao.updateUser(user);
+		userDaoImpl.updateUser(user);
 	}
 	
 	public void removeUser(User user){
-		userDao.removeUser(user);
+		userDaoImpl.removeUser(user);
 	}
 	
 	public User getUser(int userID){
-		return userDao.getUser(userID);
+		return userDaoImpl.getUser(userID);
 	}
 	
 	public void addRole(Role role){
-		roleDao.addRole(role);
+		roleDaoImpl.addRole(role);
 	}
 	
 	public void updateRole(Role role){
-		roleDao.updateRole(role);
+		roleDaoImpl.updateRole(role);
 	}
 	
 	public void removeRole(Role role){
-		roleDao.removeRole(role);
+		roleDaoImpl.removeRole(role);
 	}
 	
 	public Role getRole(int roleID){
-		return roleDao.getRole(roleID);
+		return roleDaoImpl.getRole(roleID);
 	}
 	
 	public void addDepartment(Department department){
-		deptDao.addDepartment(department);
+		deptDaoImpl.addDepartment(department);
 	}
 	
 	public void updateDepartment(Department department){
-		deptDao.updateDepartment(department);
+		deptDaoImpl.updateDepartment(department);
 	}
 	
 	public void removeDepartment(Department department){
-		deptDao.removeDepartment(department);
+		deptDaoImpl.removeDepartment(department);
 	}
 	
 	public Department getDepartment(int departmentID){
-		return deptDao.getDepartment(departmentID);
+		return deptDaoImpl.getDepartment(departmentID);
 	}
 	
 	public void addEmployee(Employee employee){
-		empDao.addEmployee(employee);
+		empDaoImpl.addEmployee(employee);
 	}
 	
 	public void updateEmployee(Employee employee){
-		empDao.updateEmployee(employee);
+		empDaoImpl.updateEmployee(employee);
 	}
 	
 	public void removeEmployee(Employee employee){
-		empDao.removeEmployee(employee);
+		empDaoImpl.removeEmployee(employee);
 	}
 	
 	public Employee getEmployee(int emp_id){
-		return empDao.getEmployee(emp_id);
+		return empDaoImpl.getEmployee(emp_id);
 	}
 }

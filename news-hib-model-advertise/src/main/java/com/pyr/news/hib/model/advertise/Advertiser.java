@@ -1,6 +1,6 @@
 package com.pyr.news.hib.model.advertise;
 
-// Generated Nov 3, 2014 6:31:34 PM by Hibernate Tools 3.4.0.CR1
+// Generated Nov 17, 2014 3:27:02 PM by Hibernate Tools 3.4.0.CR1
 
 import java.util.HashSet;
 import java.util.Set;
@@ -24,9 +24,9 @@ public class Advertiser implements java.io.Serializable {
 	private String name;
 	private String status;
 	private byte frontpage;
-	private Set advertiserContacts = new HashSet(0);
-	private Set advertiserAddresses = new HashSet(0);
-	private Set advertises = new HashSet(0);
+	private Set<AdvertiserContact> advertiserContacts = new HashSet(0);
+	private Set<AdvertiserAddress> advertiserAddresses = new HashSet(0);
+	private Set<Advertise> advertises = new HashSet(0);
 
 	public Advertiser() {
 	}
@@ -38,7 +38,7 @@ public class Advertiser implements java.io.Serializable {
 	}
 
 	public Advertiser(String name, String status, byte frontpage,
-			Set advertiserContacts, Set advertiserAddresses, Set advertises) {
+			Set<AdvertiserContact> advertiserContacts, Set<AdvertiserAddress> advertiserAddresses, Set<Advertise> advertises) {
 		this.name = name;
 		this.status = status;
 		this.frontpage = frontpage;
@@ -67,7 +67,7 @@ public class Advertiser implements java.io.Serializable {
 		this.name = name;
 	}
 
-	@Column(name = "status", nullable = false, length = 17)
+	@Column(name = "status", nullable = false, length = 15)
 	public String getStatus() {
 		return this.status;
 	}
@@ -86,7 +86,7 @@ public class Advertiser implements java.io.Serializable {
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "advertiser")
-	public Set getAdvertiserContacts() {
+	public Set<AdvertiserContact> getAdvertiserContacts() {
 		return this.advertiserContacts;
 	}
 
@@ -95,20 +95,20 @@ public class Advertiser implements java.io.Serializable {
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "advertiser")
-	public Set getAdvertiserAddresses() {
+	public Set<AdvertiserAddress> getAdvertiserAddresses() {
 		return this.advertiserAddresses;
 	}
 
-	public void setAdvertiserAddresses(Set advertiserAddresses) {
+	public void setAdvertiserAddresses(Set<AdvertiserAddress> advertiserAddresses) {
 		this.advertiserAddresses = advertiserAddresses;
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "advertiser")
-	public Set getAdvertises() {
+	public Set<Advertise> getAdvertises() {
 		return this.advertises;
 	}
 
-	public void setAdvertises(Set advertises) {
+	public void setAdvertises(Set<Advertise> advertises) {
 		this.advertises = advertises;
 	}
 

@@ -22,7 +22,7 @@ public class EntityType implements java.io.Serializable {
 
 	private Integer id;
 	private String name;
-	private Set entitieses = new HashSet(0);
+	private Set<Entities> entitieses = new HashSet(0);
 
 	public EntityType() {
 	}
@@ -31,7 +31,7 @@ public class EntityType implements java.io.Serializable {
 		this.name = name;
 	}
 
-	public EntityType(String name, Set entitieses) {
+	public EntityType(String name, Set<Entities> entitieses) {
 		this.name = name;
 		this.entitieses = entitieses;
 	}
@@ -57,11 +57,11 @@ public class EntityType implements java.io.Serializable {
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "entityType")
-	public Set getEntitieses() {
+	public Set<Entities> getEntitieses() {
 		return this.entitieses;
 	}
 
-	public void setEntitieses(Set entitieses) {
+	public void setEntitieses(Set<Entities> entitieses) {
 		this.entitieses = entitieses;
 	}
 

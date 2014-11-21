@@ -62,12 +62,12 @@
 		<module>news-ws-app</module>
 		<module>news-hib-dao-acnt</module>
 		<module>news-hib-model-acnt</module>
-		<module>news-hib-model-article</module>
+		<module>news-hib-model-publish</module>
 		<module>news-solr-dao-article</module>
 		<module>news-solr-model-article</module>
 		<module>news-hib-model-advertise</module>
 		<module>news-hib-model-scheduler</module>
-		<module>news-service-accnt</module>
-		<module>news-hib-dao-article</module>
+		<module>news-service</module>
+		<module>news-hib-dao-publish</module>
 	</modules>
 </project>

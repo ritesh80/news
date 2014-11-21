@@ -4,4 +4,24 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+      <servlet>
+        <servlet-name>webContext</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>webContext</servlet-name>
+        <url-pattern>/spring/*</url-pattern>
+    </servlet-mapping>
+    <listener>
+    	 <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    <context-param>    
+        <param-name>contextConfigLocation</param-name>    
+        <param-value>classpath:/config/appContext.xml  </param-value>    
+    </context-param> 
+    <context-param>
+    	<param-name>web-app-ctx</param-name>
+    	<param-value>news-ws-app</param-value>
+    </context-param> 
 </web-app>

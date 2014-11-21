@@ -26,11 +26,11 @@ public class User implements java.io.Serializable {
 	private String lastname;
 	private String email;
 	private String altEmail;
-	private Set userRoleses = new HashSet(0);
-	private Set userAccounts = new HashSet(0);
-	private Set userAddresseses = new HashSet(0);
-	private Set employees = new HashSet(0);
-	private Set userContacts = new HashSet(0);
+	private Set<UserRoles> userRoleses = new HashSet(0);
+	private Set<UserAccount> userAccounts = new HashSet(0);
+	private Set<UserAddresses> userAddresseses = new HashSet(0);
+	private Set<Employee> employees = new HashSet(0);
+	private Set<UserContact> userContacts = new HashSet(0);
 
 	public User() {
 	}
@@ -43,8 +43,8 @@ public class User implements java.io.Serializable {
 	}
 
 	public User(String name, String firstname, String lastname, String email,
-			String altEmail, Set userRoleses, Set userAccounts,
-			Set userAddresseses, Set employees, Set userContacts) {
+			String altEmail, Set<UserRoles> userRoleses, Set<UserAccount> userAccounts,
+			Set<UserAddresses> userAddresseses, Set<Employee> employees, Set<UserContact> userContacts) {
 		this.name = name;
 		this.firstname = firstname;
 		this.lastname = lastname;
@@ -114,47 +114,47 @@ public class User implements java.io.Serializable {
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
-	public Set getUserRoleses() {
+	public Set<UserRoles> getUserRoleses() {
 		return this.userRoleses;
 	}
 
-	public void setUserRoleses(Set userRoleses) {
+	public void setUserRoleses(Set<UserRoles> userRoleses) {
 		this.userRoleses = userRoleses;
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
-	public Set getUserAccounts() {
+	public Set<UserAccount> getUserAccounts() {
 		return this.userAccounts;
 	}
 
-	public void setUserAccounts(Set userAccounts) {
+	public void setUserAccounts(Set<UserAccount> userAccounts) {
 		this.userAccounts = userAccounts;
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
-	public Set getUserAddresseses() {
+	public Set<UserAddresses> getUserAddresseses() {
 		return this.userAddresseses;
 	}
 
-	public void setUserAddresseses(Set userAddresseses) {
+	public void setUserAddresseses(Set<UserAddresses> userAddresseses) {
 		this.userAddresseses = userAddresseses;
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
-	public Set getEmployees() {
+	public Set<Employee> getEmployees() {
 		return this.employees;
 	}
 
-	public void setEmployees(Set employees) {
+	public void setEmployees(Set<Employee> employees) {
 		this.employees = employees;
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
-	public Set getUserContacts() {
+	public Set<UserContact> getUserContacts() {
 		return this.userContacts;
 	}
 
-	public void setUserContacts(Set userContacts) {
+	public void setUserContacts(Set<UserContact> userContacts) {
 		this.userContacts = userContacts;
 	}
 

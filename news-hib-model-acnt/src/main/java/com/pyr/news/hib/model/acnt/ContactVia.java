@@ -23,7 +23,7 @@ public class ContactVia implements java.io.Serializable {
 	private Integer id;
 	private String number;
 	private String type;
-	private Set userContacts = new HashSet(0);
+	private Set<UserContact> userContacts = new HashSet(0);
 
 	public ContactVia() {
 	}
@@ -33,7 +33,7 @@ public class ContactVia implements java.io.Serializable {
 		this.type = type;
 	}
 
-	public ContactVia(String number, String type, Set userContacts) {
+	public ContactVia(String number, String type, Set<UserContact> userContacts) {
 		this.number = number;
 		this.type = type;
 		this.userContacts = userContacts;
@@ -69,11 +69,11 @@ public class ContactVia implements java.io.Serializable {
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "contactVia")
-	public Set getUserContacts() {
+	public Set<UserContact> getUserContacts() {
 		return this.userContacts;
 	}
 
-	public void setUserContacts(Set userContacts) {
+	public void setUserContacts(Set<UserContact> userContacts) {
 		this.userContacts = userContacts;
 	}
 

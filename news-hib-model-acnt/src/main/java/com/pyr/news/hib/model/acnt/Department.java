@@ -22,7 +22,7 @@ public class Department implements java.io.Serializable {
 
 	private Integer id;
 	private String name;
-	private Set empDpts = new HashSet(0);
+	private Set<EmpDpt> empDpts = new HashSet(0);
 
 	public Department() {
 	}
@@ -31,7 +31,7 @@ public class Department implements java.io.Serializable {
 		this.name = name;
 	}
 
-	public Department(String name, Set empDpts) {
+	public Department(String name, Set<EmpDpt> empDpts) {
 		this.name = name;
 		this.empDpts = empDpts;
 	}
@@ -57,11 +57,11 @@ public class Department implements java.io.Serializable {
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "department")
-	public Set getEmpDpts() {
+	public Set<EmpDpt> getEmpDpts() {
 		return this.empDpts;
 	}
 
-	public void setEmpDpts(Set empDpts) {
+	public void setEmpDpts(Set<EmpDpt> empDpts) {
 		this.empDpts = empDpts;
 	}
 

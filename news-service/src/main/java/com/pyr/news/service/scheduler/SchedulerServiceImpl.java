@@ -14,44 +14,44 @@ import com.pyr.news.hib.model.scheduler.Scheduler;
 public class SchedulerServiceImpl implements ScheculerService {
 
 		@Autowired
-		private SchedulerDao scheduleDao;
+		private SchedulerDao scheduleDaoImpl;
 		
 		@Autowired
 		private AccountSchedulerDao accntScheduleDao;
 		
 		@Autowired
-		private BgProcessDao bgProcessDao;
+		private BgProcessDao bgProcessDaoImpl;
 		
 		public void addScheduler(Scheduler scheduler){
-			scheduleDao.addScheduler(scheduler);
+			scheduleDaoImpl.addScheduler(scheduler);
 		}
 		
 		public void updateScheduler(Scheduler scheduler){
-			scheduleDao.updateScheduler(scheduler);
+			scheduleDaoImpl.updateScheduler(scheduler);
 		}
 		
 		public void removeScheduler(Scheduler scheduler){
-			scheduleDao.removeScheduler(scheduler);
+			scheduleDaoImpl.removeScheduler(scheduler);
 		}
 		
 		public Scheduler getScheduler(int schedulerID){
-			return scheduleDao.getScheduler(schedulerID);
+			return scheduleDaoImpl.getScheduler(schedulerID);
 		}
 		
 		public void addBgProcess(BgProcess bgProcess){
-			bgProcessDao.addBgProcess(bgProcess);
+			bgProcessDaoImpl.addBgProcess(bgProcess);
 		}
 		
 		public void updateBgProcess(BgProcess bgProcess){
-			bgProcessDao.updateBgProcess(bgProcess);
+			bgProcessDaoImpl.updateBgProcess(bgProcess);
 		}
 		
 		public void removeBgProcess(BgProcess bgProcess){
-			bgProcessDao.removeBgProcess(bgProcess);
+			bgProcessDaoImpl.removeBgProcess(bgProcess);
 		}
 		
 		public BgProcess getBgProcess(int bgProcessID){
-			return bgProcessDao.getBgProcess(bgProcessID);
+			return bgProcessDaoImpl.getBgProcess(bgProcessID);
 		}
 		
 		public void addAccountSchedule(AccountScheduler accountSchedule){

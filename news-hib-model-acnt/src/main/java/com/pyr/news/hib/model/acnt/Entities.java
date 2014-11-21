@@ -29,7 +29,7 @@ public class Entities implements java.io.Serializable {
 	private String supportMailId;
 	private String companyMailId;
 	private String status;
-	private Set entityAddresseses = new HashSet(0);
+	private Set<EntityAddresses> entityAddresseses = new HashSet(0);
 
 	public Entities() {
 	}
@@ -45,7 +45,7 @@ public class Entities implements java.io.Serializable {
 
 	public Entities(EntityType entityType, String name, String logo,
 			String supportMailId, String companyMailId, String status,
-			Set entityAddresseses) {
+			Set<EntityAddresses> entityAddresseses) {
 		this.entityType = entityType;
 		this.name = name;
 		this.logo = logo;
@@ -122,11 +122,11 @@ public class Entities implements java.io.Serializable {
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "entities")
-	public Set getEntityAddresseses() {
+	public Set<EntityAddresses> getEntityAddresseses() {
 		return this.entityAddresseses;
 	}
 
-	public void setEntityAddresseses(Set entityAddresseses) {
+	public void setEntityAddresseses(Set<EntityAddresses> entityAddresseses) {
 		this.entityAddresseses = entityAddresseses;
 	}
 

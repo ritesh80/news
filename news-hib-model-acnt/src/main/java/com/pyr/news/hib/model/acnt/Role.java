@@ -23,8 +23,8 @@ public class Role implements java.io.Serializable {
 	private Integer id;
 	private String name;
 	private int roleTypeId;
-	private Set userRoleses = new HashSet(0);
-	private Set empRoleses = new HashSet(0);
+	private Set<UserRoles> userRoleses = new HashSet(0);
+	private Set<EmpRoles> empRoleses = new HashSet(0);
 
 	public Role() {
 	}
@@ -34,7 +34,7 @@ public class Role implements java.io.Serializable {
 		this.roleTypeId = roleTypeId;
 	}
 
-	public Role(String name, int roleTypeId, Set userRoleses, Set empRoleses) {
+	public Role(String name, int roleTypeId, Set<UserRoles> userRoleses, Set<EmpRoles> empRoleses) {
 		this.name = name;
 		this.roleTypeId = roleTypeId;
 		this.userRoleses = userRoleses;
@@ -71,20 +71,20 @@ public class Role implements java.io.Serializable {
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "role")
-	public Set getUserRoleses() {
+	public Set<UserRoles> getUserRoleses() {
 		return this.userRoleses;
 	}
 
-	public void setUserRoleses(Set userRoleses) {
+	public void setUserRoleses(Set<UserRoles> userRoleses) {
 		this.userRoleses = userRoleses;
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "role")
-	public Set getEmpRoleses() {
+	public Set<EmpRoles> getEmpRoleses() {
 		return this.empRoleses;
 	}
 
-	public void setEmpRoleses(Set empRoleses) {
+	public void setEmpRoleses(Set<EmpRoles> empRoleses) {
 		this.empRoleses = empRoleses;
 	}
 

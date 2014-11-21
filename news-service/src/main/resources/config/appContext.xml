@@ -11,11 +11,12 @@
         http://www.springframework.org/schema/tx
         http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
      
+    <context:annotation-config/>
     <context:component-scan base-package="com.pyr.news"/>
 	<tx:annotation-driven transaction-manager="hibernateTransactionManager"/>
 
  	<bean id="sessionFactory"
-    class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+    class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
       <property name="dataSource" ref="dataSource" />
       <property name="packagesToScan" value="com.pyr.news.hib.model" />
       <property name="hibernateProperties">

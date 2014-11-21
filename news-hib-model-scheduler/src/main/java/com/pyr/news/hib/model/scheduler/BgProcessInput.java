@@ -22,7 +22,7 @@ public class BgProcessInput implements java.io.Serializable {
 
 	private Integer id;
 	private String input;
-	private Set bgProcesses = new HashSet(0);
+	private Set<BgProcess> bgProcesses = new HashSet(0);
 
 	public BgProcessInput() {
 	}
@@ -31,7 +31,7 @@ public class BgProcessInput implements java.io.Serializable {
 		this.input = input;
 	}
 
-	public BgProcessInput(String input, Set bgProcesses) {
+	public BgProcessInput(String input, Set<BgProcess> bgProcesses) {
 		this.input = input;
 		this.bgProcesses = bgProcesses;
 	}
@@ -57,11 +57,11 @@ public class BgProcessInput implements java.io.Serializable {
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "bgProcessInput")
-	public Set getBgProcesses() {
+	public Set<BgProcess> getBgProcesses() {
 		return this.bgProcesses;
 	}
 
-	public void setBgProcesses(Set bgProcesses) {
+	public void setBgProcesses(Set<BgProcess> bgProcesses) {
 		this.bgProcesses = bgProcesses;
 	}
 

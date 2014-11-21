@@ -27,8 +27,8 @@ public class Address implements java.io.Serializable {
 	private String state;
 	private String country;
 	private String zip;
-	private Set userAddresseses = new HashSet(0);
-	private Set entityAddresseses = new HashSet(0);
+	private Set<UserAddresses> userAddresseses = new HashSet(0);
+	private Set<EntityAddresses> entityAddresseses = new HashSet(0);
 
 	public Address() {
 	}
@@ -43,8 +43,8 @@ public class Address implements java.io.Serializable {
 	}
 
 	public Address(String address1, String address2, String city, String state,
-			String country, String zip, Set userAddresseses,
-			Set entityAddresseses) {
+			String country, String zip, Set<UserAddresses> userAddresseses,
+			Set<EntityAddresses> entityAddresseses) {
 		this.address1 = address1;
 		this.address2 = address2;
 		this.city = city;
@@ -121,20 +121,20 @@ public class Address implements java.io.Serializable {
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "address")
-	public Set getUserAddresseses() {
+	public Set<UserAddresses> getUserAddresseses() {
 		return this.userAddresseses;
 	}
 
-	public void setUserAddresseses(Set userAddresseses) {
+	public void setUserAddresseses(Set<UserAddresses> userAddresseses) {
 		this.userAddresseses = userAddresseses;
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "address")
-	public Set getEntityAddresseses() {
+	public Set<EntityAddresses> getEntityAddresseses() {
 		return this.entityAddresseses;
 	}
 
-	public void setEntityAddresseses(Set entityAddresseses) {
+	public void setEntityAddresseses(Set<EntityAddresses> entityAddresseses) {
 		this.entityAddresseses = entityAddresseses;
 	}
 

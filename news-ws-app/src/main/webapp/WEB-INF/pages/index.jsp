@@ -11,9 +11,9 @@
     <meta name="keywords" content="">
     <title></title>
         <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="<c:out value="${web-app-ctx}"/>/css/bootstrap.min.css" rel="stylesheet"/>
 	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-	<script src="js/bootstrap.js"></script>
+	<script src="<c:out value="${web-app-ctx}"/>/js/bootstrap.js"></script>
     <!--[if IE]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->

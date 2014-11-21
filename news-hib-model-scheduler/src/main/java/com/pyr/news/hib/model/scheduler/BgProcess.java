@@ -32,7 +32,7 @@ public class BgProcess implements java.io.Serializable {
 	private String comment;
 	private Date createdDate;
 	private int createdBy;
-	private Set schedulers = new HashSet(0);
+	private Set<Scheduler> schedulers = new HashSet(0);
 
 	public BgProcess() {
 	}
@@ -48,7 +48,7 @@ public class BgProcess implements java.io.Serializable {
 
 	public BgProcess(int id, BgProcessInput bgProcessInput,
 			BgProcessType bgProcessType, String description, String status,
-			String comment, Date createdDate, int createdBy, Set schedulers) {
+			String comment, Date createdDate, int createdBy, Set<Scheduler> schedulers) {
 		this.id = id;
 		this.bgProcessInput = bgProcessInput;
 		this.bgProcessType = bgProcessType;
@@ -138,11 +138,11 @@ public class BgProcess implements java.io.Serializable {
 
 	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(name = "bg_process_scheduler", catalog = "demo_news", joinColumns = { @JoinColumn(name = "bg_process_id", nullable = false, updatable = false) }, inverseJoinColumns = { @JoinColumn(name = "scheduler_id", nullable = false, updatable = false) })
-	public Set getSchedulers() {
+	public Set<Scheduler> getSchedulers() {
 		return this.schedulers;
 	}
 
-	public void setSchedulers(Set schedulers) {
+	public void setSchedulers(Set<Scheduler> schedulers) {
 		this.schedulers = schedulers;
 	}
 

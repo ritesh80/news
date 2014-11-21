@@ -1,6 +1,6 @@
 package com.pyr.news.hib.model.advertise;
 
-// Generated Nov 3, 2014 6:31:34 PM by Hibernate Tools 3.4.0.CR1
+// Generated Nov 17, 2014 3:27:02 PM by Hibernate Tools 3.4.0.CR1
 
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;

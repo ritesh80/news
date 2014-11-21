@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 //import .hibernate.SessionFactory;
 import com.pyr.news.hib.model.acnt.Account;
-@Repository("accountDaoImpl")
+@Repository
 @Transactional
 public class AccountDaoImpl implements AccountDao {
 	

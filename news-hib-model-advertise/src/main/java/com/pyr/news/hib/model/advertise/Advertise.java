@@ -1,6 +1,6 @@
 package com.pyr.news.hib.model.advertise;
 
-// Generated Nov 3, 2014 6:31:34 PM by Hibernate Tools 3.4.0.CR1
+// Generated Nov 17, 2014 3:27:02 PM by Hibernate Tools 3.4.0.CR1
 
 import java.util.Date;
 import java.util.HashSet;
@@ -29,7 +29,7 @@ public class Advertise implements java.io.Serializable {
 	private Advertiser advertiser;
 	private AdvertiseDetails advertiseDetails;
 	private Date createDate;
-	private Set advertiseAttachments = new HashSet(0);
+	private Set<AdvertiseAttachment> advertiseAttachments = new HashSet(0);
 
 	public Advertise() {
 	}
@@ -42,7 +42,7 @@ public class Advertise implements java.io.Serializable {
 	}
 
 	public Advertise(Advertiser advertiser, AdvertiseDetails advertiseDetails,
-			Date createDate, Set advertiseAttachments) {
+			Date createDate, Set<AdvertiseAttachment> advertiseAttachments) {
 		this.advertiser = advertiser;
 		this.advertiseDetails = advertiseDetails;
 		this.createDate = createDate;
@@ -91,11 +91,11 @@ public class Advertise implements java.io.Serializable {
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "advertise")
-	public Set getAdvertiseAttachments() {
+	public Set<AdvertiseAttachment> getAdvertiseAttachments() {
 		return this.advertiseAttachments;
 	}
 
-	public void setAdvertiseAttachments(Set advertiseAttachments) {
+	public void setAdvertiseAttachments(Set<AdvertiseAttachment> advertiseAttachments) {
 		this.advertiseAttachments = advertiseAttachments;
 	}
 

@@ -3,50 +3,53 @@ package com.pyr.news.service.advertise;
 import org.pyr.news.hib.dao.advertise.AdvertiseDao;
 import org.pyr.news.hib.dao.advertise.AdvertiserDao;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.pyr.news.hib.model.advertise.Advertise;
 import com.pyr.news.hib.model.advertise.Advertiser;
 
-@Service
+//@Service
 public class AdvertiseServiceImpl implements AdvertiseService {
 	
-	@Autowired
-	private AdvertiseDao advertiseDao;
+	//@Autowired
+	//@Qualifier("advertiseDaoImplImpl")
+	private AdvertiseDao advertiseDaoImpl;
 	
-	@Autowired
-	private AdvertiserDao advertiserDao;
+	//@Autowired
+	//@Qualifier("advertiserDaoImplImpl")
+	private AdvertiserDao advertiserDaoImpl;
 	
 	public void addAdvertise(Advertise Advertise){
-		advertiseDao.addAdvertise(Advertise);
+		advertiseDaoImpl.addAdvertise(Advertise);
 	}
 	
 	public void updateAdvertise(Advertise Advertise){
-		advertiseDao.updateAdvertise(Advertise);
+		advertiseDaoImpl.updateAdvertise(Advertise);
 	}
 	
 	public void removeAdvertise(Advertise Advertise){
-		advertiseDao.removeAdvertise(Advertise);
+		advertiseDaoImpl.removeAdvertise(Advertise);
 	}
 	
 	public Advertise getAdvertise(int AdvertiseID){
-		return advertiseDao.getAdvertise(AdvertiseID);
+		return advertiseDaoImpl.getAdvertise(AdvertiseID);
 	}
 	
 	public void addAdvertiser(Advertiser advertiser){
-		advertiserDao.addAdvertiser(advertiser);
+		advertiserDaoImpl.addAdvertiser(advertiser);
 	}
 	
 	public void updateAdvertiser(Advertiser advertiser){
-		advertiserDao.updateAdvertiser(advertiser);
+		advertiserDaoImpl.updateAdvertiser(advertiser);
 	}
 	
 	public void removeAdvertiser(Advertiser advertiser){
-		advertiserDao.removeAdvertiser(advertiser);
+		advertiserDaoImpl.removeAdvertiser(advertiser);
 	}
 	
 	public Advertiser getAdvertiser(int advertiserID){
-		return advertiserDao.getAdvertiser(advertiserID);
+		return advertiserDaoImpl.getAdvertiser(advertiserID);
 	}
 	
 

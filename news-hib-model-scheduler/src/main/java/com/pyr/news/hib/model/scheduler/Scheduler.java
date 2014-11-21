@@ -33,8 +33,8 @@ public class Scheduler implements java.io.Serializable {
 	private String type;
 	private String priority;
 	private Date triggerTime;
-	private Set accountSchedulers = new HashSet(0);
-	private Set bgProcesses = new HashSet(0);
+	private Set<AccountScheduler> accountSchedulers = new HashSet(0);
+	private Set<BgProcess> bgProcesses = new HashSet(0);
 
 	public Scheduler() {
 	}
@@ -46,8 +46,8 @@ public class Scheduler implements java.io.Serializable {
 	}
 
 	public Scheduler(String name, Date startDate, Date endDate, String type,
-			String priority, Date triggerTime, Set accountSchedulers,
-			Set bgProcesses) {
+			String priority, Date triggerTime, Set<AccountScheduler> accountSchedulers,
+			Set<BgProcess> bgProcesses) {
 		this.name = name;
 		this.startDate = startDate;
 		this.endDate = endDate;
@@ -127,21 +127,21 @@ public class Scheduler implements java.io.Serializable {
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "scheduler")
-	public Set getAccountSchedulers() {
+	public Set<AccountScheduler> getAccountSchedulers() {
 		return this.accountSchedulers;
 	}
 
-	public void setAccountSchedulers(Set accountSchedulers) {
+	public void setAccountSchedulers(Set<AccountScheduler> accountSchedulers) {
 		this.accountSchedulers = accountSchedulers;
 	}
 
 	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(name = "bg_process_scheduler", catalog = "demo_news", joinColumns = { @JoinColumn(name = "scheduler_id", nullable = false, updatable = false) }, inverseJoinColumns = { @JoinColumn(name = "bg_process_id", nullable = false, updatable = false) })
-	public Set getBgProcesses() {
+	public Set<BgProcess> getBgProcesses() {
 		return this.bgProcesses;
 	}
 
-	public void setBgProcesses(Set bgProcesses) {
+	public void setBgProcesses(Set<BgProcess> bgProcesses) {
 		this.bgProcesses = bgProcesses;
 	}
 

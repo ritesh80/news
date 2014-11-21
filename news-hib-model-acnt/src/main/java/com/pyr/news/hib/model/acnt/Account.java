@@ -25,8 +25,8 @@ public class Account implements java.io.Serializable {
 	private String login;
 	private String password;
 	private String status;
-	private Set userAccounts = new HashSet(0);
-	private Set accountSchedulers = new HashSet(0);
+	private Set<UserAccount> userAccounts = new HashSet(0);
+	//private Set<AccountScheduler> accountSchedulers = new HashSet(0);
 
 	public Account() {
 	}
@@ -40,13 +40,13 @@ public class Account implements java.io.Serializable {
 	}
 
 	public Account(String accountTypeId, String login, String password,
-			String status, Set userAccounts, Set accountSchedulers) {
+			String status, Set<UserAccount> userAccounts){//, Set<AccountScheduler> accountSchedulers) {
 		this.accountTypeId = accountTypeId;
 		this.login = login;
 		this.password = password;
 		this.status = status;
 		this.userAccounts = userAccounts;
-		this.accountSchedulers = accountSchedulers;
+		//this.accountSchedulers = accountSchedulers;
 	}
 
 	@Id
@@ -97,21 +97,21 @@ public class Account implements java.io.Serializable {
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "account")
-	public Set getUserAccounts() {
+	public Set<UserAccount> getUserAccounts() {
 		return this.userAccounts;
 	}
 
-	public void setUserAccounts(Set userAccounts) {
+	public void setUserAccounts(Set<UserAccount> userAccounts) {
 		this.userAccounts = userAccounts;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "account")
-	public Set getAccountSchedulers() {
+/*	@OneToMany(fetch = FetchType.LAZY, mappedBy = "account")
+	public Set<AccountScheduler> getAccountSchedulers() {
 		return this.accountSchedulers;
 	}
 
-	public void setAccountSchedulers(Set accountSchedulers) {
+	public void setAccountSchedulers(Set<AccountScheduler> accountSchedulers) {
 		this.accountSchedulers = accountSchedulers;
-	}
+	}*/
 
 }

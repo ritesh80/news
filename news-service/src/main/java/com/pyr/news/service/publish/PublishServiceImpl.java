@@ -14,60 +14,60 @@ import com.pyr.news.hib.model.publish.Section;
 public class PublishServiceImpl implements PublishService {
 
 	@Autowired
-	private ArticleDao articleDao;
+	public ArticleDao articleDaoImpl;
 	
 	@Autowired
-	private CategoryDao categoryDao;
+	private CategoryDao categoryDaoImpl;
 	
 	@Autowired
-	private SectionDao sectionDao;
+	private SectionDao sectionDaoImpl;
 	
 	public void addArticle(Article article){
-		articleDao.addArticle(article);
+		articleDaoImpl.addArticle(article);
 	}
 	
 	public void updateArticle(Article article){
-		articleDao.updateArticle(article);
+		articleDaoImpl.updateArticle(article);
 	}
 	
 	public void removeArticle(Article article){
-		articleDao.removeArticle(article);
+		articleDaoImpl.removeArticle(article);
 	}
 	
 	public Article getArticle(int articleID){
-		return articleDao.getArticle(articleID);
+		return articleDaoImpl.getArticle(articleID);
 	}
 	
 	public void addCategory(Category category){
-		categoryDao.addCategory(category);
+		categoryDaoImpl.addCategory(category);
 	}
 	
 	public void updateCategory(Category category){
-		categoryDao.updateCategory(category);
+		categoryDaoImpl.updateCategory(category);
 	}
 	
 	public void removeCategory(Category category){
-		categoryDao.removeCategory(category);
+		categoryDaoImpl.removeCategory(category);
 	}
 	
 	public Category getCategory(int categoryID){
-		return categoryDao.getCategory(categoryID);
+		return categoryDaoImpl.getCategory(categoryID);
 	}
 	
 	
 	public void addSection(Section section){
-		sectionDao.addSection(section);
+		sectionDaoImpl.addSection(section);
 	}
 	
 	public void updateSection(Section section){
-		sectionDao.updateSection(section);
+		sectionDaoImpl.updateSection(section);
 	}
 	
 	public void removeSection(Section section){
-		sectionDao.removeSection(section);
+		sectionDaoImpl.removeSection(section);
 	}
 	
 	public Section getSection(int sectionID){
-		return sectionDao.getSection(sectionID);
+		return sectionDaoImpl.getSection(sectionID);
 	}
 }
