@@ -13,15 +13,39 @@ import com.pyr.news.hib.model.publish.Section;
 @Service
 public class PublishServiceImpl implements PublishService {
 
-	@Autowired
+	//@Autowired
 	public ArticleDao articleDaoImpl;
 	
-	@Autowired
+	//@Autowired
 	private CategoryDao categoryDaoImpl;
 	
-	@Autowired
+	//@Autowired
 	private SectionDao sectionDaoImpl;
-	
+	@Autowired
+	public ArticleDao getArticleDaoImpl() {
+		return articleDaoImpl;
+	}
+
+	public void setArticleDaoImpl(ArticleDao articleDaoImpl) {
+		this.articleDaoImpl = articleDaoImpl;
+	}
+	@Autowired
+	public CategoryDao getCategoryDaoImpl() {
+		return categoryDaoImpl;
+	}
+
+	public void setCategoryDaoImpl(CategoryDao categoryDaoImpl) {
+		this.categoryDaoImpl = categoryDaoImpl;
+	}
+	@Autowired
+	public SectionDao getSectionDaoImpl() {
+		return sectionDaoImpl;
+	}
+
+	public void setSectionDaoImpl(SectionDao sectionDaoImpl) {
+		this.sectionDaoImpl = sectionDaoImpl;
+	}
+
 	public void addArticle(Article article){
 		articleDaoImpl.addArticle(article);
 	}

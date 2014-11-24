@@ -17,8 +17,16 @@ import com.pyr.news.hib.model.acnt.User;
 @Component
 public class LoginManagerService implements UserDetailsService {
 
-	@Autowired
+
 	private AccountService accountService;
+	@Autowired
+	public AccountService getAccountService() {
+		return accountService;
+	}
+
+	public void setAccountService(AccountService accountService) {
+		this.accountService = accountService;
+	}
 
 	public UserDetails loadUserByUsername(String login)
 			throws UsernameNotFoundException {

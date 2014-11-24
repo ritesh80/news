@@ -7,6 +7,7 @@
       <servlet>
         <servlet-name>webContext</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
     </servlet>
 
     <servlet-mapping>
@@ -21,7 +22,7 @@
         <param-value>classpath:/config/appContext.xml  </param-value>    
     </context-param> 
     <context-param>
-    	<param-name>web-app-ctx</param-name>
-    	<param-value>news-ws-app</param-value>
+    	<param-name>webappctx</param-name>
+    	<param-value>ctx</param-value>
     </context-param> 
 </web-app>

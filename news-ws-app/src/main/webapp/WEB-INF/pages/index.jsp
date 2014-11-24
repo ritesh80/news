@@ -1,5 +1,4 @@
-<%@page contentType="text/html"%>
-<%@page pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"  isELIgnored="false"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,9 +10,9 @@
     <meta name="keywords" content="">
     <title></title>
         <!-- Bootstrap Core CSS -->
-    <link href="<c:out value="${web-app-ctx}"/>/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/${initParam['webappctx']}/css/bootstrap.min.css" rel="stylesheet"/>
 	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-	<script src="<c:out value="${web-app-ctx}"/>/js/bootstrap.js"></script>
+	<script src="/${initParam['webappctx']}/js/bootstrap.js"></script>
     <!--[if IE]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->

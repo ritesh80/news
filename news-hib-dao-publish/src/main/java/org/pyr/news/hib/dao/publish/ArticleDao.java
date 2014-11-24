@@ -1,7 +1,8 @@
 package org.pyr.news.hib.dao.publish;
 
-import com.pyr.news.hib.model.publish.Article;
+import org.springframework.stereotype.Repository;
 
+import com.pyr.news.hib.model.publish.Article;
 public interface ArticleDao {
 	public void addArticle(Article article);
 	

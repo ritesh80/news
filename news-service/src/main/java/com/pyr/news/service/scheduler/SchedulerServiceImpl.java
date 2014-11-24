@@ -10,18 +10,42 @@ import org.springframework.stereotype.Service;
 import com.pyr.news.hib.model.scheduler.AccountScheduler;
 import com.pyr.news.hib.model.scheduler.BgProcess;
 import com.pyr.news.hib.model.scheduler.Scheduler;
-@Service
+//@Service
 public class SchedulerServiceImpl implements ScheculerService {
 
-		@Autowired
+		//@Autowired
 		private SchedulerDao scheduleDaoImpl;
 		
-		@Autowired
+		//@Autowired
 		private AccountSchedulerDao accntScheduleDao;
 		
-		@Autowired
+		//@Autowired
 		private BgProcessDao bgProcessDaoImpl;
-		
+		@Autowired
+		public SchedulerDao getScheduleDaoImpl() {
+			return scheduleDaoImpl;
+		}
+
+		public void setScheduleDaoImpl(SchedulerDao scheduleDaoImpl) {
+			this.scheduleDaoImpl = scheduleDaoImpl;
+		}
+		@Autowired
+		public AccountSchedulerDao getAccntScheduleDao() {
+			return accntScheduleDao;
+		}
+
+		public void setAccntScheduleDao(AccountSchedulerDao accntScheduleDao) {
+			this.accntScheduleDao = accntScheduleDao;
+		}
+		@Autowired
+		public BgProcessDao getBgProcessDaoImpl() {
+			return bgProcessDaoImpl;
+		}
+
+		public void setBgProcessDaoImpl(BgProcessDao bgProcessDaoImpl) {
+			this.bgProcessDaoImpl = bgProcessDaoImpl;
+		}
+
 		public void addScheduler(Scheduler scheduler){
 			scheduleDaoImpl.addScheduler(scheduler);
 		}

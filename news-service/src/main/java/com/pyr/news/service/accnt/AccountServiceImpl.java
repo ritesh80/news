@@ -17,21 +17,61 @@ import com.pyr.news.hib.model.acnt.User;
 @Service
 public class AccountServiceImpl implements AccountService {
 	
-	@Autowired
+	//@Autowired
 	private AccountDao accountDaoImpl;
 	
-	@Autowired
+	//@Autowired
 	private UserDao userDaoImpl;
 	
-	@Autowired
+	//@Autowired
 	private EmployeeDao empDaoImpl;
 	
-	@Autowired
+	//@Autowired
 	private RoleDao roleDaoImpl;
 	
-	@Autowired
+	//@Autowired
 	private DepartmentDao deptDaoImpl;
+	@Autowired
+	public AccountDao getAccountDaoImpl() {
+		return accountDaoImpl;
+	}
 	
+	public void setAccountDaoImpl(AccountDao accountDaoImpl) {
+		this.accountDaoImpl = accountDaoImpl;
+	}
+	@Autowired
+	public UserDao getUserDaoImpl() {
+		return userDaoImpl;
+	}
+
+	public void setUserDaoImpl(UserDao userDaoImpl) {
+		this.userDaoImpl = userDaoImpl;
+	}
+	@Autowired
+	public EmployeeDao getEmpDaoImpl() {
+		return empDaoImpl;
+	}
+
+	public void setEmpDaoImpl(EmployeeDao empDaoImpl) {
+		this.empDaoImpl = empDaoImpl;
+	}
+	@Autowired
+	public RoleDao getRoleDaoImpl() {
+		return roleDaoImpl;
+	}
+
+	public void setRoleDaoImpl(RoleDao roleDaoImpl) {
+		this.roleDaoImpl = roleDaoImpl;
+	}
+	@Autowired
+	public DepartmentDao getDeptDaoImpl() {
+		return deptDaoImpl;
+	}
+
+	public void setDeptDaoImpl(DepartmentDao deptDaoImpl) {
+		this.deptDaoImpl = deptDaoImpl;
+	}
+
 	public void addAccount(Account account){
 		accountDaoImpl.addAccount(account);
 	}

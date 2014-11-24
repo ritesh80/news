@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import com.pyr.news.hib.model.advertise.Advertise;
 import com.pyr.news.hib.model.advertise.Advertiser;
 
-//@Service
+@Service
 public class AdvertiseServiceImpl implements AdvertiseService {
 	
 	//@Autowired
@@ -19,7 +19,23 @@ public class AdvertiseServiceImpl implements AdvertiseService {
 	//@Autowired
 	//@Qualifier("advertiserDaoImplImpl")
 	private AdvertiserDao advertiserDaoImpl;
-	
+	@Autowired
+	public AdvertiseDao getAdvertiseDaoImpl() {
+		return advertiseDaoImpl;
+	}
+
+	public void setAdvertiseDaoImpl(AdvertiseDao advertiseDaoImpl) {
+		this.advertiseDaoImpl = advertiseDaoImpl;
+	}
+	@Autowired
+	public AdvertiserDao getAdvertiserDaoImpl() {
+		return advertiserDaoImpl;
+	}
+
+	public void setAdvertiserDaoImpl(AdvertiserDao advertiserDaoImpl) {
+		this.advertiserDaoImpl = advertiserDaoImpl;
+	}
+
 	public void addAdvertise(Advertise Advertise){
 		advertiseDaoImpl.addAdvertise(Advertise);
 	}

@@ -35,6 +35,22 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+	<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>2.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>taglibs</groupId>
+			<artifactId>standard</artifactId>
+			<version>1.1.2</version>
+		</dependency>		
   </dependencies>
   <build>
     <finalName>news-ws-app</finalName>
@@ -51,6 +67,7 @@
               <maxIdleTime>60000</maxIdleTime>
             </connector>
           </connectors>
+          	<contextPath>/ctx</contextPath>
         </configuration>
       </plugin>
 			<plugin>
@@ -59,7 +76,26 @@
 				<configuration>
 					<packagingExcludes>WEB-INF/lib/servlet-api-2.3.jar</packagingExcludes>
 				</configuration>
-			</plugin>    
+
+			</plugin>
+		<plugin>
+		  <groupId>org.eclipse.jetty</groupId>
+		   <artifactId>jetty-jspc-maven-plugin</artifactId>
+		   <version>9.1.0.RC1</version>
+		   <executions>
+		     <execution>
+		       <id>jspc</id>
+		       <goals>
+		         <goal>jspc</goal>
+		       </goals>
+		        <phase>prepare-package</phase>
+		        <configuration>
+		          <verbose>true</verbose>
+		          <insertionMarker><!-- [INSERT FRAGMENT HERE] --></insertionMarker>
+		        </configuration>
+	     </execution>
+		   </executions>
+		 </plugin>    
     </plugins>
   </build>
 </project>
