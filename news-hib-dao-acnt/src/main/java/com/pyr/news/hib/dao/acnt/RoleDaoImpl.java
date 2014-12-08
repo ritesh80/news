@@ -28,5 +28,13 @@ public class RoleDaoImpl implements RoleDao {
 	public Role getRole(int roleID){
 		return (Role)sessionFactory.getCurrentSession().get(Role.class, roleID);
 	}
+	
+	/*
+	 * select * from ROLES limit initial,page;
+	 * select * from ROLES where id=x;
+	 * select * from ROLES where type="xyz";
+	 * select * from USER_ROLES us_rol join ROLES rol on (us_rol.role_id = rol.id) where us_rol.user_id = "xyz";
+	 * 
+	 */
 
 }

@@ -29,4 +29,5 @@ public class DepartmentDaoImpl implements DepartmentDao {
 	public Department getDepartment(int departmentID){
 		return (Department)sessionFactory.getCurrentSession().get(Department.class, departmentID);
 	}
+	
 }

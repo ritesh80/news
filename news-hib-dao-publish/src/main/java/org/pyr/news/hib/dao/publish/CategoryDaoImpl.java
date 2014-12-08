@@ -29,4 +29,10 @@ public class CategoryDaoImpl implements CategoryDao {
 		return (Category)sessionFactory.getCurrentSession().createSQLQuery("select * from Category where id="+categoryID);
 		
 	}
+	/*
+	 * select * from CATEGORY;
+	 * select * from CATEGORY limit initial , categperpage order by xyz
+	 * select * from CATEGORY where id=x;
+	 * 
+	 */
 }

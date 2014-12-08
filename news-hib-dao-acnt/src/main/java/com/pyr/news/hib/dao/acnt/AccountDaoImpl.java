@@ -39,4 +39,11 @@ public class AccountDaoImpl implements AccountDao {
 	public Account getAccountByLogin(String login){
 		return (Account)sessionFactory.getCurrentSession().createSQLQuery("Select * FROM ACCOUNT where login='"+login+"'").uniqueResult();
 	}
+	/* select * from ACCOUNT where id=x;
+	 * select count(*) from ACCOUNT;
+	 *  select * from ACCOUNT limit initial , page;
+	 *  select * from ACCOUNT ac join USER_ACCOUNT us_ac on (ac.id = us_ac.user_id) where status in ('Active');
+	 *  
+	 */
+
 }

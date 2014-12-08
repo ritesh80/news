@@ -29,4 +29,11 @@ public class ArticleDaoImpl implements ArticleDao {
 	public Article getArticle(int articleID){
 		return (Article)sessionFactory.getCurrentSession().createSQLQuery("select * from Article where id="+articleID);
 	}
+	/*
+	 * select * from ARTICLE limit initial, articleperpage
+	 * select * from ARTICLE where id=x;
+	 * select count(*)  from ARTICLE ;
+	 * select * from ARTICLE where status in ('Active');
+	 * 
+	 */
 }
