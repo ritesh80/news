@@ -14,8 +14,9 @@
   </head>
   
   <body>
-  	<c:import url="${header}"/>
-  	<c:import url="${common}"/>
- 	<c:import url="${footer}"/>
+  	<c:set var="urlvalue" value="${initParam['protocol']}${initParam['domain']}/"/>
+   	<c:import url="${urlvalue}${initParam['webappctx_spring']}${requestScope.header}"/>
+  	<c:import url="${urlvalue}${initParam['webappctx_spring']}${common}"/>
+ 	<c:import url="${urlvalue}${initParam['webappctx_spring']}${footer}"/>
   </body>
 </html>

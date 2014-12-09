@@ -1,6 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-        <link href="/${initParam['webappctx']}/css/bootstrap.min.css" rel="stylesheet"/>
+<%@page language="java" pageEncoding="UTF-8"  isELIgnored="false" %>
+   
+    <link href="/${initParam['webappctx']}/css/bootstrap.min.css" rel="stylesheet"/>
 	  <style type="text/css">
        body {
          padding-top: 0px;

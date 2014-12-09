@@ -24,5 +24,17 @@
     <context-param>
     	<param-name>webappctx</param-name>
     	<param-value>ctx</param-value>
-    </context-param> 
+    </context-param>
+   <context-param>
+    	<param-name>webappctx_spring</param-name>
+    	<param-value>ctx/spring</param-value>
+    </context-param>
+   <context-param>
+    	<param-name>domain</param-name>
+    	<param-value>://localhost:8080</param-value>
+    </context-param>
+   <context-param>
+    	<param-name>protocol</param-name>
+    	<param-value>http</param-value>
+    </context-param>  
 </web-app>

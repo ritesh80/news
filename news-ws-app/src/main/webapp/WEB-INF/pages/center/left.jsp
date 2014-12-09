@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@page language="java" pageEncoding="UTF-8"  isELIgnored="false" %>
 		  <div class="col-md-3">
 		  		<div id="left_nav" class="navbar-header">
                      <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle">Action <span class="caret"></span></button>
@@ -35,4 +34,4 @@
                     </ul>
   	 
   			 </div>
-			 </div>
+		</div>
