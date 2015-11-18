@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+	<table-filter match-catalog="demo_news" match-name="address" />
+	<table-filter match-catalog="demo_news" match-name="role" />
+	<table-filter match-catalog="demo_news" match-name="user" />
+	<table-filter match-catalog="demo_news" match-name="user_addresses" />
+	<table-filter match-catalog="demo_news" match-name="user_roles" />
+	<table-filter match-name="account" match-catalog="demo_news"></table-filter>
+	<table-filter match-name="account_scheduler"
+		match-catalog="demo_news">
+	</table-filter>
+	<table-filter match-name="account_type" match-catalog="demo_news"></table-filter>
+	<table-filter match-name="address" match-catalog="demo_news"></table-filter>
+	<table-filter match-name="contact_via" match-catalog="demo_news"></table-filter>
+	<table-filter match-name="department" match-catalog="demo_news"></table-filter>
+	<table-filter match-name="emp_dpt" match-catalog="demo_news"></table-filter>
+	<table-filter match-name="emp_roles" match-catalog="demo_news"></table-filter>
+	<table-filter match-name="employee" match-catalog="demo_news"></table-filter>
+	<table-filter match-name="entity_addresses"
+		match-catalog="demo_news">
+	</table-filter>
+	<table-filter match-name="entity_type" match-catalog="demo_news"></table-filter>
+	<table-filter match-name="user" match-catalog="demo_news"></table-filter>
+	<table-filter match-name="user_account" match-catalog="demo_news"></table-filter>
+	<table-filter match-name="user_addresses"
+		match-catalog="demo_news">
+	</table-filter>
+	<table-filter match-name="user_contact" match-catalog="demo_news"></table-filter>
+	<table-filter match-name="user_roles" match-catalog="demo_news"></table-filter>
+	<table-filter match-name="entities" match-catalog="demo_news"></table-filter>
+</hibernate-reverse-engineering>

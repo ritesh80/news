@@ -3,13 +3,16 @@
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:encryption="http://www.jasypt.org/schema/encryption"
 	xsi:schemaLocation="
         http://www.springframework.org/schema/beans     
         http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
         http://www.springframework.org/schema/context 
         http://www.springframework.org/schema/context/spring-context-3.2.xsd
         http://www.springframework.org/schema/tx
-        http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
+        http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+        http://www.jasypt.org/schema/encryption
+                           http://www.jasypt.org/schema/encryption/jasypt-spring31-encryption-1.xsd">
      <context:annotation-config />
     <context:component-scan base-package="com.pyr.news.hib.dao.publish"/>
     <context:component-scan base-package="com.pyr.news.hib.dao.acnt"/>
@@ -19,6 +22,14 @@
     <context:component-scan base-package="com.pyr.news.service.acnt"/>
     <context:component-scan base-package="com.pyr.news.service.scheduler"/>
     <context:component-scan base-package="com.pyr.news.service.advertise"/>
+	<bean id="messageSource"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>classpath:config/dbConfig</value>
+			</list>
+		</property>
+	</bean>
 
 	<tx:annotation-driven transaction-manager="hibernateTransactionManager"/>
  	<bean id="sessionFactory"
@@ -37,13 +48,16 @@
  
    <bean id="dataSource"
     class="org.apache.commons.dbcp.BasicDataSource">
-      <property name="driverClassName" value="com.mysql.jdbc.Driver" />
-      <property name="url" value="jdbc:mysql://localhost:3306/demo_news?autoReconnect=true" />
-      <property name="username" value="root" />
-      <property name="password" value="admin" />
+      <property name="driverClassName" value="${driverClass}" />
+      <property name="url" value="${url}" />
+      <property name="username" value="${rolename}" />
+      <property name="password" value="${pass}" />
    </bean>
 
     <bean id="hibernateTransactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
      	<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
+	    <bean id="template" class="org.springframework.orm.hibernate3.HibernateTemplate">  
+    <property name="sessionFactory" ref="mysessionFactory"></property>  
+    </bean>
 </beans>

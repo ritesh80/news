@@ -9,8 +9,8 @@
 		<!-- Spring -->
 		<spring-framework.version>4.0.3.RELEASE</spring-framework.version>
 		<!-- Hibernate / JPA -->
-		<!-- <hibernate.version>4.3.5.Final</hibernate.version> -->
-		<hibernate.version>3.6.9.Final</hibernate.version>
+		<hibernate.version>4.3.5.Final</hibernate.version>
+		<!-- hibernate.version>3.6.9.Final</hibernate.version-->
 		<cxf.version>2.7.2</cxf.version>
 		<pyr.news.version>0.0.1-SNAPSHOT</pyr.news.version>
 		<spring-security>3.2.3.RELEASE</spring-security>
@@ -58,6 +58,11 @@
 			<artifactId>spring-security-config</artifactId>
 			<version>${spring-security}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring-framework.version}</version>
+		</dependency>
 	</dependencies>
 	<modules>
 		<module>news-ws-app</module>
@@ -70,5 +75,6 @@
 		<module>news-hib-model-scheduler</module>
 		<module>news-service</module>
 		<module>news-hib-dao-publish</module>
-	</modules>
+    <module>education</module>
+  </modules>
 </project>
