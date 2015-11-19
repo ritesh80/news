@@ -4,6 +4,7 @@ import com.pyr.news.hib.model.acnt.*;
 
 public interface AccountDao {
 
+
 	public void addAccount(Account account);
 	
 	public void updateAccount(Account account);
