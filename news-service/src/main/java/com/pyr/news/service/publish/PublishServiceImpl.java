@@ -13,14 +13,15 @@ import com.pyr.news.hib.model.publish.Section;
 @Service
 public class PublishServiceImpl implements PublishService {
 
-	//@Autowired
+	// @Autowired
 	public ArticleDao articleDaoImpl;
-	
-	//@Autowired
+
+	// @Autowired
 	private CategoryDao categoryDaoImpl;
-	
-	//@Autowired
+
+	// @Autowired
 	private SectionDao sectionDaoImpl;
+
 	@Autowired
 	public ArticleDao getArticleDaoImpl() {
 		return articleDaoImpl;
@@ -29,6 +30,7 @@ public class PublishServiceImpl implements PublishService {
 	public void setArticleDaoImpl(ArticleDao articleDaoImpl) {
 		this.articleDaoImpl = articleDaoImpl;
 	}
+
 	@Autowired
 	public CategoryDao getCategoryDaoImpl() {
 		return categoryDaoImpl;
@@ -37,6 +39,7 @@ public class PublishServiceImpl implements PublishService {
 	public void setCategoryDaoImpl(CategoryDao categoryDaoImpl) {
 		this.categoryDaoImpl = categoryDaoImpl;
 	}
+
 	@Autowired
 	public SectionDao getSectionDaoImpl() {
 		return sectionDaoImpl;
@@ -46,52 +49,51 @@ public class PublishServiceImpl implements PublishService {
 		this.sectionDaoImpl = sectionDaoImpl;
 	}
 
-	public void addArticle(Article article){
-		articleDaoImpl.addArticle(article);
+	public void addArticle(Article article) {
+		articleDaoImpl.insert(article);
 	}
-	
-	public void updateArticle(Article article){
-		articleDaoImpl.updateArticle(article);
+
+	public void updateArticle(Article article) {
+		articleDaoImpl.update(article);
 	}
-	
-	public void removeArticle(Article article){
-		articleDaoImpl.removeArticle(article);
+
+	public void removeArticle(Article article) {
+		articleDaoImpl.remove(article);
 	}
-	
-	public Article getArticle(int articleID){
-		return articleDaoImpl.getArticle(articleID);
+
+	public Article getArticle(int articleID) {
+		return (Article) articleDaoImpl.get(Article.class, articleID);
 	}
-	
-	public void addCategory(Category category){
-		categoryDaoImpl.addCategory(category);
+
+	public void addCategory(Category category) {
+		categoryDaoImpl.insert(category);
 	}
-	
-	public void updateCategory(Category category){
-		categoryDaoImpl.updateCategory(category);
+
+	public void updateCategory(Category category) {
+		categoryDaoImpl.update(category);
 	}
-	
-	public void removeCategory(Category category){
-		categoryDaoImpl.removeCategory(category);
+
+	public void removeCategory(Category category) {
+		categoryDaoImpl.remove(category);
 	}
-	
-	public Category getCategory(int categoryID){
-		return categoryDaoImpl.getCategory(categoryID);
+
+	public Category getCategory(int categoryID) {
+		return (Category) categoryDaoImpl.get(Category.class, categoryID);
 	}
-	
-	
-	public void addSection(Section section){
-		sectionDaoImpl.addSection(section);
+
+	public void addSection(Section section) {
+		sectionDaoImpl.insert(section);
 	}
-	
-	public void updateSection(Section section){
-		sectionDaoImpl.updateSection(section);
+
+	public void updateSection(Section section) {
+		sectionDaoImpl.update(section);
 	}
-	
-	public void removeSection(Section section){
-		sectionDaoImpl.removeSection(section);
+
+	public void removeSection(Section section) {
+		sectionDaoImpl.remove(section);
 	}
-	
-	public Section getSection(int sectionID){
-		return sectionDaoImpl.getSection(sectionID);
+
+	public Section getSection(int sectionID) {
+		return (Section) sectionDaoImpl.get(Section.class, sectionID);
 	}
 }

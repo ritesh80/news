@@ -1,13 +1,7 @@
 package org.pyr.news.hib.dao.advertise;
 
-import com.pyr.news.hib.model.advertise.Advertiser;
+import com.pyr.news.hib.dao.InitDao;
 
-public interface AdvertiserDao {
-	public void addAdvertiser(Advertiser advertiser);
-	
-	public void updateAdvertiser(Advertiser advertiser);
-	
-	public void removeAdvertiser(Advertiser advertiser);
-	
-	public Advertiser getAdvertiser(int advertiserID);
+public interface AdvertiserDao extends InitDao {
+
 }

@@ -76,5 +76,6 @@
 		<module>news-service</module>
 		<module>news-hib-dao-publish</module>
     <module>education</module>
+    <module>news-hib-dao</module>
   </modules>
 </project>

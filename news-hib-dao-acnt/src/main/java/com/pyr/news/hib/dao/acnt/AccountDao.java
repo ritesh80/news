@@ -1,16 +1,8 @@
 package com.pyr.news.hib.dao.acnt;
 
-import com.pyr.news.hib.model.acnt.*;
+import com.pyr.news.hib.dao.InitDao;
+import com.pyr.news.hib.model.acnt.Account;
 
-public interface AccountDao {
-
-	public void addAccount(Account account);
-	
-	public void updateAccount(Account account);
-	
-	public void removeAccount(Account account);
-	
-	public Account getAccount(int accountID);
-	
+public interface AccountDao extends InitDao {
 	public Account getAccountByLogin(String login);
 }

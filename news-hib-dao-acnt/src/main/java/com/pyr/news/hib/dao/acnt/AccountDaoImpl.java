@@ -2,45 +2,22 @@ package com.pyr.news.hib.dao.acnt;
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.orm.hibernate3.HibernateTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.pyr.news.hib.dao.CustomDaoSupport;
 //import .hibernate.SessionFactory;
 import com.pyr.news.hib.model.acnt.Account;
 
 @Repository
 @Transactional
-public class AccountDaoImpl implements AccountDao {
+public class AccountDaoImpl extends CustomDaoSupport implements AccountDao {
 
 	@Autowired
 	private SessionFactory sessionFactory;
-	@Autowired
-	private HibernateTemplate template;
-
-	public void addAccount(Account account) {
-		// TODO Auto-generated method stub
-		template.save(account);
-	}
-
-	public void updateAccount(Account account) {
-		// TODO Auto-generated method stub
-		template.saveOrUpdate(account);
-
-	}
-
-	public void removeAccount(Account account) {
-		// TODO Auto-generated method stub
-		template.delete(account);
-
-	}
-
-	public Account getAccount(int accountID) {
-		return (Account) template.get(Account.class, accountID);
-	}
 
 	public Account getAccountByLogin(String login) {
-		return (Account) template
+		return (Account) getHibernateTemplate()
 				.getSessionFactory()
 				.getCurrentSession()
 				.createSQLQuery(

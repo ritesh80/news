@@ -21,6 +21,11 @@
 	  <artifactId>news-hib-model-scheduler</artifactId>
 	  <version>0.0.1-SNAPSHOT</version>  	
   	</dependency>
+         <dependency>
+            <groupId>com.pyr.news</groupId>
+            <artifactId>news-hib-dao</artifactId>
+            <version>${pyr.news.version}</version>
+        </dependency>  	
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>

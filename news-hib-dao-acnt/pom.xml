@@ -28,7 +28,11 @@
             <artifactId>news-hib-model-acnt</artifactId>
             <version>${pyr.news.version}</version>
         </dependency>
- 
+         <dependency>
+            <groupId>com.pyr.news</groupId>
+            <artifactId>news-hib-dao</artifactId>
+            <version>${pyr.news.version}</version>
+        </dependency>
         <!-- Spring ORM support 
         <dependency>
             <groupId>org.springframework</groupId>

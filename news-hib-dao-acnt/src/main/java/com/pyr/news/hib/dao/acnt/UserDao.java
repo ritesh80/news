@@ -1,13 +1,7 @@
 package com.pyr.news.hib.dao.acnt;
 
-import com.pyr.news.hib.model.acnt.User;
+import com.pyr.news.hib.dao.InitDao;
 
-public interface UserDao {
-	public void addUser(User user);
-	
-	public void updateUser(User user);
-	
-	public void removeUser(User user);
-	
-	public User getUser(int userID);
+public interface UserDao extends InitDao {
+
 }
