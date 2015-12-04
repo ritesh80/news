@@ -4,21 +4,22 @@ import org.pyr.news.hib.dao.scheduler.AccountSchedulerDao;
 import org.pyr.news.hib.dao.scheduler.BgProcessDao;
 import org.pyr.news.hib.dao.scheduler.SchedulerDao;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.pyr.news.hib.model.scheduler.AccountScheduler;
 import com.pyr.news.hib.model.scheduler.BgProcess;
 import com.pyr.news.hib.model.scheduler.Scheduler;
 
-//@Service
+@Service
 public class SchedulerServiceImpl implements ScheculerService {
 
-	// @Autowired
+	@Autowired
 	private SchedulerDao scheduleDaoImpl;
 
-	// @Autowired
+	@Autowired
 	private AccountSchedulerDao accntScheduleDao;
 
-	// @Autowired
+	@Autowired
 	private BgProcessDao bgProcessDaoImpl;
 
 	@Autowired

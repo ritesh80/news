@@ -63,6 +63,17 @@
 			<artifactId>spring-orm</artifactId>
 			<version>${spring-framework.version}</version>
 		</dependency>
+	<dependency>
+	    <groupId>org.glassfish.jersey.ext</groupId>
+	    <artifactId>jersey-bean-validation</artifactId>
+	    <version>2.22.1</version>
+	    <!-- exclusions>
+	        <exclusion>
+	            <groupId>org.hibernate</groupId>
+	            <artifactId>hibernate-validator</artifactId>
+	        </exclusion>
+	    </exclusions-->
+	</dependency>		
 	</dependencies>
 	<modules>
 		<module>news-ws-app</module>
